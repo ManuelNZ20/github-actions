@@ -16,6 +16,10 @@ jobs:
       platform: aws
       region: us-east-1
       account: 123456789012
+
+      username: ${{secrets.USER_NAME}}
+      password: ${{secrets.PASSWORD}}
+
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -25,11 +29,13 @@ jobs:
         run: echo "Hello, world!"
 
       - name: "Show environment variables"
-        if: ${{env.platform=='azure'}}
         run: |
           echo "This is value Platform: ${{env.platform}}"
           echo "This is value Region: ${{env.region}}"
           echo "This is value Account: ${{env.account}}"
+
+          echo "This is value Username: ${{env.username}}"
+          echo "This is value Password: ${{env.password}}"
 
       - name: "Show events default"
         run: |
