@@ -30,3 +30,7 @@ jobs:
           echo "This is value Platform: ${{env.platform}}"
           echo "This is value Region: ${{env.region}}"
           echo "This is value Account: ${{env.account}}"
+
+      - name: "Show events default"
+        run: |
+          echo "Events: ${{toJSON(github.event)}}"
