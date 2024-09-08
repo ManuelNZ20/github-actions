@@ -36,6 +36,10 @@ jobs:
 
           echo "This is value Username: ${{env.username}}"
           echo "This is value Password: ${{env.password}}"
+      - name: "Show values if user is correct"
+        if: ${{ env.username != 'DE' && env.password != ''}}
+        run: |
+          echo "Yes, the user is correct"
 
       - name: "Show events default"
         run: |
