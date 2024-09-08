@@ -34,3 +34,6 @@ jobs:
       - name: "Show events default"
         run: |
           echo "Events: ${{toJSON(github.event)}}"
+          echo "Github_ACTOR ${{github.actor}}"
+          echo "Github_ACTOR $GITHUB_ACTOR"
+          echo "Github_REPOSITORY $GITHUB_REPOSITORY"
